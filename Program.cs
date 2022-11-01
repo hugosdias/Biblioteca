@@ -68,7 +68,7 @@
         public static void EditarLivro()
         {
             Console.WriteLine("EDITAR LIVRO!");
-            Console.Write("Digite o código do livro que deseja editar: ");
+            Console.Write("Digite o código do LIVRO: ");
             int indiceLivro = int.Parse(Console.ReadLine());
 
             if(listLivros.Contains(listLivros[indiceLivro]))
@@ -95,6 +95,18 @@
                             case "3":
                                 Console.Write("Digite o GENERO do Livro: ");
                                 listLivros[indiceLivro].Genero = Console.ReadLine().ToUpper();
+                                Console.WriteLine("Alteração concluída.");
+                                Console.WriteLine();
+                                break;
+                            case "4":
+                                Console.Write("Digite o ANO do Livro: ");
+                                listLivros[indiceLivro].Ano = Console.ReadLine().ToUpper();
+                                Console.WriteLine("Alteração concluída.");
+                                Console.WriteLine();
+                                break;
+                            case "5":
+                                Console.WriteLine("Digite a EDITORA do Livro: ");
+                                listLivros[indiceLivro].Editora = Console.ReadLine().ToUpper();
                                 Console.WriteLine("Alteração concluída.");
                                 Console.WriteLine();
                                 break;
@@ -130,6 +142,8 @@
             Console.WriteLine("1 - Editar NOME do LIVRO");
             Console.WriteLine("2 - Editar NOME do AUTOR");
             Console.WriteLine("3 - Editar GENERO do LIVRO");
+            Console.WriteLine("4 - Editar ANO do LIVRO");
+            Console.WriteLine("5 - Editar EDITORA do LIVRO");
             Console.WriteLine("X - Retornar ao menu principal");
             Console.WriteLine();
 
