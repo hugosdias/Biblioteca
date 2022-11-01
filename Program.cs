@@ -1,5 +1,4 @@
-﻿
-namespace teste
+﻿namespace teste
 {
     internal class Program
     {
@@ -32,7 +31,7 @@ namespace teste
             }
         }
 
-        static void InserirLivro()
+        public static void InserirLivro()
         {
             Console.Write("Nome do Livro: ");
             string nomeLivro = Console.ReadLine().ToUpper();
@@ -56,7 +55,7 @@ namespace teste
             Console.Write("Livro Cadastrado com Sucesso.");
             Console.WriteLine();
         }
-        static void ListarLivros()
+        public static void ListarLivros()
         {
             for (int i = 0; i < listLivros.Count; i++)
             {
@@ -65,7 +64,8 @@ namespace teste
                 Console.WriteLine(livro);
             }
         }
-        static void EditarLivro()
+        
+        public static void EditarLivro()
         {
             Console.Write("Digite o código do livro que deseja editar: ");
             int indiceLivro = int.Parse(Console.ReadLine());
