@@ -32,9 +32,5 @@ namespace teste
             retorno += "Editora: " + this.Editora;
             return retorno;
         }
-
-               
     }
-
-    
-}
+} 

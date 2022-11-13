@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\teste\\teste.csproj": {}
+    "D:\\Desenvolvimento\\Biblioteca\\biblioteca\\teste.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\teste\\teste.csproj": {
+    "D:\\Desenvolvimento\\Biblioteca\\biblioteca\\teste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\teste\\teste.csproj",
+        "projectUniqueName": "D:\\Desenvolvimento\\Biblioteca\\biblioteca\\teste.csproj",
         "projectName": "teste",
-        "projectPath": "C:\\Projetos\\teste\\teste.csproj",
+        "projectPath": "D:\\Desenvolvimento\\Biblioteca\\biblioteca\\teste.csproj",
         "packagesPath": "C:\\Users\\hugo_\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\teste\\obj\\",
+        "outputPath": "D:\\Desenvolvimento\\Biblioteca\\biblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hugo_\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hugo_\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
