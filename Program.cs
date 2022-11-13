@@ -1,5 +1,4 @@
-﻿
-namespace teste
+﻿namespace teste
 {
     internal class Program
     {
@@ -13,7 +12,7 @@ namespace teste
                 switch (opcaoUsuario)
                 {
                     case "1":
-                        InserirLivro();
+                        CadastrarLivro();
                         break;
                     case "2":
                         ListarLivros();
@@ -32,7 +31,7 @@ namespace teste
             }
         }
 
-        static void InserirLivro()
+        public static void CadastrarLivro()
         {
             Console.Write("Nome do Livro: ");
             string nomeLivro = Console.ReadLine().ToUpper();
@@ -56,7 +55,7 @@ namespace teste
             Console.Write("Livro Cadastrado com Sucesso.");
             Console.WriteLine();
         }
-        static void ListarLivros()
+        public static void ListarLivros()
         {
             for (int i = 0; i < listLivros.Count; i++)
             {
@@ -65,33 +64,56 @@ namespace teste
                 Console.WriteLine(livro);
             }
         }
-        static void EditarLivro()
+        
+        public static void EditarLivro()
         {
-            Console.Write("Digite o código do livro que deseja editar: ");
+            Console.WriteLine("EDITAR LIVRO!");
+            Console.Write("Digite o código do LIVRO: ");
             int indiceLivro = int.Parse(Console.ReadLine());
 
             if(listLivros.Contains(listLivros[indiceLivro]))
             {
-               {
-                    Console.Write("Informe o campo que deseja alterar ou digite SAIR: ");
-                    string opcaoUsuario = Console.ReadLine().ToUpper();
+               {                 
+                    string opcaoUsuario = OpcaoUsuarioEditarLivro();
                         
-                    while (opcaoUsuario.ToUpper() != "SAIR")
+                    while (opcaoUsuario.ToUpper() != "x")
                     {
                         switch (opcaoUsuario)
                         {
-                            case "NOME":
-                                Console.Write("Digite o nome: ");
+                            case "1":
+                                Console.Write("Digite o NOME do Livro: ");
                                 listLivros[indiceLivro].Nome = Console.ReadLine().ToUpper();
                                 Console.WriteLine("Alteração concluída.");
+                                Console.WriteLine();
                                 break;
-                            case "AUTOR":
-                                Console.Write("Digite o Autor: ");
+                            case "2":
+                                Console.Write("Digite o AUTOR do Livro: ");
                                 listLivros[indiceLivro].Autor = Console.ReadLine().ToUpper();
+                                Console.WriteLine("Alteração concluída.");
+                                Console.WriteLine();
                                 break;
+                            case "3":
+                                Console.Write("Digite o GENERO do Livro: ");
+                                listLivros[indiceLivro].Genero = Console.ReadLine().ToUpper();
+                                Console.WriteLine("Alteração concluída.");
+                                Console.WriteLine();
+                                break;
+                            case "4":
+                                Console.Write("Digite o ANO do Livro: ");
+                                listLivros[indiceLivro].Ano = Console.ReadLine().ToUpper();
+                                Console.WriteLine("Alteração concluída.");
+                                Console.WriteLine();
+                                break;
+                            case "5":
+                                Console.WriteLine("Digite a EDITORA do Livro: ");
+                                listLivros[indiceLivro].Editora = Console.ReadLine().ToUpper();
+                                Console.WriteLine("Alteração concluída.");
+                                Console.WriteLine();
+                                break;
+                            case "X":
+                                return;
                         }
-                        Console.Write("Informe o campo que deseja alterar ou digite SAIR: ");
-                        opcaoUsuario = Console.ReadLine().ToUpper();
+                        opcaoUsuario = OpcaoUsuarioEditarLivro();
                     }                  
                 }
             }
@@ -106,6 +128,23 @@ namespace teste
             Console.WriteLine("2 - Listar Livros");
             Console.WriteLine("3 - Editar Livro");
             Console.WriteLine("X - Sair");
+            Console.WriteLine();
+
+            string opcaoUsuario = Console.ReadLine().ToUpper();
+            Console.WriteLine();
+            return opcaoUsuario;
+        }
+
+        private static string OpcaoUsuarioEditarLivro()
+        {
+            Console.Write("Seleciona a opção abaixo: ");
+            Console.WriteLine();
+            Console.WriteLine("1 - Editar NOME do LIVRO");
+            Console.WriteLine("2 - Editar NOME do AUTOR");
+            Console.WriteLine("3 - Editar GENERO do LIVRO");
+            Console.WriteLine("4 - Editar ANO do LIVRO");
+            Console.WriteLine("5 - Editar EDITORA do LIVRO");
+            Console.WriteLine("X - Retornar ao menu principal");
             Console.WriteLine();
 
             string opcaoUsuario = Console.ReadLine().ToUpper();
