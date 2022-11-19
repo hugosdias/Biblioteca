@@ -76,7 +76,7 @@ namespace Biblioteca
                     Console.WriteLine($"{listLivros[indiceLivro].ToString()}");
                     Console.WriteLine();
 
-                    string opcaoUsuario = OpcaoUsuarioEditarLivro();
+                    string opcaoUsuario = MenuEditarLivro();
 
                     while (opcaoUsuario.ToUpper() != "x")
                     {
@@ -115,7 +115,7 @@ namespace Biblioteca
                             case "X":
                                 return;
                         }
-                        opcaoUsuario = OpcaoUsuarioEditarLivro();
+                        opcaoUsuario = MenuEditarLivro();
                     }
                 }
             }
@@ -126,7 +126,7 @@ namespace Biblioteca
             }
         }
 
-        private static string OpcaoUsuarioEditarLivro()
+        private static string MenuEditarLivro()
         {
             Console.Write("Seleciona a opção abaixo: ");
             Console.WriteLine();
