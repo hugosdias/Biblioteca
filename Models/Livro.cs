@@ -17,7 +17,7 @@ namespace Biblioteca
             this.Ano = ano;
             this.Editora = editora;
         }
-        
+
         public override string ToString()
         {
             string retorno = " ";
@@ -68,11 +68,15 @@ namespace Biblioteca
             Console.Write("Digite o código do LIVRO: ");
             int indiceLivro = int.Parse(Console.ReadLine());
 
-            if(listLivros.Contains(listLivros[indiceLivro]))
+            try
             {
-               {                 
+                if (listLivros.Contains(listLivros[indiceLivro]))
+                {
+                    Console.WriteLine($"Livro Selecionado: ");
+                    Console.WriteLine($"{listLivros[indiceLivro].ToString()}");
+
                     string opcaoUsuario = OpcaoUsuarioEditarLivro();
-                        
+
                     while (opcaoUsuario.ToUpper() != "x")
                     {
                         switch (opcaoUsuario)
@@ -111,10 +115,16 @@ namespace Biblioteca
                                 return;
                         }
                         opcaoUsuario = OpcaoUsuarioEditarLivro();
-                    }                  
+                    }
                 }
             }
+            catch(ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Livro não encontrado.");
+                return;
+            }
         }
+
 
         private static string OpcaoUsuarioEditarLivro()
         {
@@ -131,6 +141,6 @@ namespace Biblioteca
             string opcaoUsuario = Console.ReadLine().ToUpper();
             Console.WriteLine();
             return opcaoUsuario;
-        }              
-    }   
+        }
+    }
 }
