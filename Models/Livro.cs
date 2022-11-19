@@ -74,6 +74,7 @@ namespace Biblioteca
                 {
                     Console.WriteLine($"Livro Selecionado: ");
                     Console.WriteLine($"{listLivros[indiceLivro].ToString()}");
+                    Console.WriteLine();
 
                     string opcaoUsuario = OpcaoUsuarioEditarLivro();
 
@@ -124,7 +125,6 @@ namespace Biblioteca
                 return;
             }
         }
-
 
         private static string OpcaoUsuarioEditarLivro()
         {
