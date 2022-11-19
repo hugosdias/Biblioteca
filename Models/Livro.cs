@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace teste
+namespace Biblioteca
 {
-    
     public class Livro
     {
         static List<Livro> listLivros = new List<Livro>();
@@ -137,10 +131,6 @@ namespace teste
             string opcaoUsuario = Console.ReadLine().ToUpper();
             Console.WriteLine();
             return opcaoUsuario;
-        }
-
-               
-    }
-
-    
+        }              
+    }   
 }
