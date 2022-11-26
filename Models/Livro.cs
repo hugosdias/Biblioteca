@@ -11,11 +11,11 @@ namespace Biblioteca
         public string Editora { get; set; }
         public Livro(string nome, string autor, string genero, string ano, string editora)
         {
-            this.Nome = nome;
-            this.Autor = autor;
-            this.Genero = genero;
-            this.Ano = ano;
-            this.Editora = editora;
+            Nome = nome;
+            Autor = autor;
+            Genero = genero;
+            Ano = ano;
+            Editora = editora;
         }
 
         public override string ToString()
@@ -46,7 +46,7 @@ namespace Biblioteca
             Console.Write("Editora: ");
             string editoraLivro = Console.ReadLine().ToUpper();
 
-            Livro novoLivro = new Livro(nome: nomeLivro, autor: autorLivro, genero: generoLivro, ano: anoLivro, editora: editoraLivro);
+            Livro novoLivro = new Livro(nomeLivro, autorLivro, generoLivro, anoLivro, editoraLivro);
 
             listLivros.Add(novoLivro);
 
