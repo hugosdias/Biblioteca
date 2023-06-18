@@ -2,7 +2,7 @@ namespace Biblioteca
 {
     public class Livro
     {
-        static List<Livro> listLivros = new List<Livro>();
+        private static List<Livro> listLivros = new();
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Autor { get; set; }
@@ -46,7 +46,7 @@ namespace Biblioteca
             Console.Write("Editora: ");
             string editoraLivro = Console.ReadLine().ToUpper();
 
-            Livro novoLivro = new Livro(nomeLivro, autorLivro, generoLivro, anoLivro, editoraLivro);
+            Livro novoLivro = new(nomeLivro, autorLivro, generoLivro, anoLivro, editoraLivro);
 
             listLivros.Add(novoLivro);
 
@@ -55,12 +55,20 @@ namespace Biblioteca
         }
         public static void ListarLivros()
         {
-            for (int i = 0; i < listLivros.Count; i++)
+            if (listLivros.Count == 0)
             {
-                Livro livro = listLivros[i];
-                Console.Write($"#{i} -");
-                Console.WriteLine(livro);
+                Console.WriteLine("Nenhum livro Cadastrado!");
             }
+            else
+            {
+                for (int i = 0; i < listLivros.Count; i++)
+                {
+                    Livro livro = listLivros[i];
+                    Console.Write($"#{i} -");
+                    Console.WriteLine(livro);
+                }
+            }
+
         }
         public static void EditarLivro()
         {
@@ -73,7 +81,7 @@ namespace Biblioteca
                 if (listLivros.Contains(listLivros[indiceLivro]))
                 {
                     Console.WriteLine($"Livro Selecionado: ");
-                    Console.WriteLine($"{listLivros[indiceLivro].ToString()}");
+                    Console.WriteLine($"{listLivros[indiceLivro]}");
                     Console.WriteLine();
 
                     string opcaoUsuario = MenuEditarLivro();
@@ -119,14 +127,12 @@ namespace Biblioteca
                     }
                 }
             }
-            catch(ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("Livro não encontrado.");
                 return;
             }
         }
-
-        //teste
 
         private static string MenuEditarLivro()
         {
