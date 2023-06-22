@@ -26,7 +26,7 @@ while (opcaoUsuario.ToUpper() != "x")
     opcaoUsuario = Menu.MenuPrincipal();
 }
 
-Exception ArgumentOutOfRangeException()
+static Exception ArgumentOutOfRangeException()
 {
     throw new NotImplementedException();
 }

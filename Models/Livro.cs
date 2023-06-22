@@ -2,7 +2,7 @@ namespace Biblioteca
 {
     public class Livro
     {
-        private static List<Livro> listLivros = new();
+        private static readonly List<Livro> listLivros = new();
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Autor { get; set; }
